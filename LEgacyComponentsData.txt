@@ -1,0 +1,181 @@
+Accordion/Leadership profile card component 
+Legacy Component Name: FAQs
+Data Source Path: /sitecore/content/Sites/Commerce Bank/home/personal/cards/credit-cards/special-connections/1C664553EFDD418B914848DC05B10F95/7972613CDCA7490B99C466B5B98D7B67/FAQs 1
+FAQ Template : 	/sitecore/templates/User Defined/Commerce Bank/Features/FAQ/FAQ Question
+Fields: 
+Question - RTE
+Answer Header - Single-Line Text
+Answer Body - Single-Line Text
+
+Answer Teplate: 	/sitecore/templates/User Defined/Commerce Bank/Features/FAQ/FAQ Answer Section
+Answer Title - RTE
+Answer Body - RTE
+
+
+Hero Image
+Legacy Component Name: Challenge Header
+Data Source Path: /sitecore/content/Sites/Commerce Bank/8103012FCE5A419CB5501C83C3171652/2E6209C7565D44748B282EF45988940E/Challenge Header - New Personal
+Data Source Template: 	/sitecore/templates/User Defined/Commerce Bank/Features/Challenges/Challenges Header 
+Fields:
+	
+Primary Text - RTE
+Small Mobile Image - Image
+Mobile Image - Image
+Large Mobile Image - Image
+Desktop Image - Image
+Secondary Text - RTE
+Button Text - RTE
+Links - Multilist
+Enable Custom Header - Checkbox
+Custom Header Html - RTE
+Enable Background Color - Checkbox
+Background Color - Dropdown
+Enable Standard Width - Checkbox
+
+Resource Listing Component
+Legacy Component Name: Basic Content Text
+Data Source Path: /sitecore/content/Sites/Commerce Bank/home/about-us/media-center/media-assets/527FB2CF0C314119825CFB13ED5852CC/B5490FDBFC6E4D2EB391DF8553B1D0A2/Basic Content Text 6
+Data Source Template: 	
+Parent - 	/sitecore/templates/User Defined/Commerce Bank/Features/Basic Content Module/Basic Content 
+Fields:
+Title - RTE
+Body - RTE
+Desktop Image - Image
+Mobile Image - Image
+Link - Drop Link
+Child - 	/sitecore/templates/User Defined/ICF Olson Features/Components/List Builder/Link Item 
+Fields:
+Text -RTE
+ItemClasses - Single-Line Text
+Link - General Link
+Header - Checkbox
+
+
+Tiles component
+Legacy Component Name: MultiColumn Component
+Data Source Path: /sitecore/content/Sites/Commerce Bank/home/business/checking/order-checks/0350349EF99548AC8D45016E2A90C1ED/241BDC835F624D31831C18F825ADDF8A/MultiColumn Component 1
+Data Source Template: 	
+Parent - 	/sitecore/templates/User Defined/Commerce Bank/Features/MultiColumn Component/MultiColumn Component
+Fields:
+NumberOfColumns - Droplink - /sitecore/content/Sites/Commerce Bank/system/Settings/MultiColumn Options
+No Background - Checkbox
+Drop Shadow - Checkbox
+Rounded Border - Checkbox
+Gray Background Wrapper - Checkbox
+MultiColumn Header -RTE
+MultiColumn Footer - RTE
+Child - 	/sitecore/templates/User Defined/Commerce Bank/Features/MultiColumn Component/Columns
+Fields:
+ColumnData -RTE
+
+
+Cards Component with Image
+Legacy Component Name: Basic Content Image 
+Data Source Path: /sitecore/content/Sites/Commerce Bank/home/wealth/DFC9C21289774D12BA559CF6E447DAEE/BBE03671355B4BA4AB140DC8EEE4B199/Basic Content Image 1
+Data Source Template: 	
+Parent - 	/sitecore/templates/User Defined/Commerce Bank/Features/Basic Content Module/Basic Content
+Fields:
+Title - RTE
+Body - RTE
+Desktop Image - Checkbox
+Rounded Borde- Image
+Mobile Image - Image
+Link - Droptree -datasource=/sitecore/content/Sites/Commerce Bank/home
+MultiColumn Footer - RTE
+Child - 	/sitecore/templates/User Defined/ICF Olson Features/Components/List Builder/List Item
+Fields:
+Text - RTE
+ItemClasses -Single-Line Text
+Child - 	/sitecore/templates/User Defined/ICF Olson Features/Components/List Builder/Link Item 
+Fields:
+Text -RTE
+ItemClasses - Single-Line Text
+Link - General Link
+Header - Checkbox
+Rendering Parameters:
+Display Image on Right Side - Checkbox
+Large Image Size - Checkbox
+
+Leadership page Table component
+Legacy Component Name: Text Box 
+Data Source Path: /sitecore/content/Sites/Commerce Bank/home/about-us/leadership/D5DB4CEA445B443DABAD7631019B9312/3DE24609E1D445998C1321CEC2B8F990/Text Box 5
+Data Source Template:/sitecore/templates/User Defined/Commerce Bank/Features/Text Box/Text Box 	
+Fields:
+Text - RTE
+
+
+Tags Component
+Legacy Component Name: News release Tags 
+Data Source Path: /sitecore/content/Sites/Commerce Bank/home/about-us/media-center/2024-news-releases/achievers-under-forty
+Data Source Template:	/sitecore/templates/User Defined/Commerce Bank/Pages/News Release/News Release Page 
+Select the tags from a link click available in Experience editor on the component
+Fields:
+Topic Tags - Multi Select
+
+
+Cards Component with Icons
+Legacy Component Name: Contact Module
+Data Source Path: /sitecore/content/Sites/Commerce Bank/home/contact-us/770FFC010AD8402FA41AED888704742F/96F9CE2BDBE649F0BF99C067410E0FE4/Contact Module 8
+Data Source Template:	/sitecore/templates/User Defined/Commerce Bank/Features/Contact Module/Contact Module
+Fields: 
+Title - RTE
+Topic Tags - Multi Select
+Child Template: /sitecore/templates/User Defined/Commerce Bank/Features/Contact Module/Contact Item
+Fields:
+Title - RTE
+Body - RTE
+Phone Number- Single-Line Text
+
+
+Highlights Content Cards Component
+Legacy Component Name: Featured Pages
+Data Source Path: /sitecore/content/Sites/Commerce Bank/home/personal/F9184E7803744EE38FBC153186CCD0E1/57237DCA2B4C4692811E531A1D159970/Featured Pages 1
+Data Source Template:	/sitecore/templates/User Defined/Commerce Bank/Features/Featured Pages/Featured Pages
+Fields: 
+Intro Text - RTE
+Link - General Link
+Child Template: /sitecore/templates/User Defined/Commerce Bank/Features/Featured Pages/Featured Card
+Fields:
+Page - TreeList -  datasource=/sitecore/content/Sites/Commerce Bank
+Title - RTE
+Summary - RTE
+Image - Image
+Link - General Link
+
+Highlights Content Cards Component
+Legacy Component Name: Featured Articles Gradient 
+Data Source Path: /sitecore/content/Sites/Commerce Bank/home/personal/F9184E7803744EE38FBC153186CCD0E1/BF3C2E7C6BE74526A81018AA15C8A60C/Featured Articles Gradient 1
+Data Source Template:	/sitecore/templates/User Defined/Commerce Bank/Features/Featured Articles/Featured Article Gradient
+Fields: 
+Intro Text - RTE
+Link - General Link
+Child Template: /sitecore/templates/User Defined/Commerce Bank/Features/Featured Articles/Featured Card Gradient
+Fields:
+Internal Page - TreeList -  datasource=/sitecore/content/Sites/Commerce Bank
+Title - RTE
+Summary - RTE
+Background Style - DropLink - /sitecore/content/Sites/Commerce Bank/system/Settings/Featured Articles Gradient Background
+Image - Image
+Link - General Link
+
+
+FDIC Banner
+Legacy Componen Name: FDICSign
+Data Source Path: /sitecore/content/Sites/Commerce Bank/home/personal/F9184E7803744EE38FBC153186CCD0E1/F4A9FE4954634BEC931E486C3653CEC4/FDICSign 1
+Data Source Template:	/sitecore/templates/User Defined/Commerce Bank/Features/FDICSign/FDICSign
+Fields: 
+Logo -Image
+Text - RTE
+
+
+
+
+
+
+
+
+
+
+
+
+
