@@ -78,10 +78,10 @@ Fields:
 Title - RTE
 Body - RTE
 Desktop Image - Checkbox
-Rounded Borde- Image
+Rounded Border- Image
 Mobile Image - Image
 Link - Droptree -datasource=/sitecore/content/Sites/Commerce Bank/home
-MultiColumn Footer - RTE
+MultiColumn Footer - RTE - this not from this template, need to delete this
 Child - 	/sitecore/templates/User Defined/ICF Olson Features/Components/List Builder/List Item
 Fields:
 Text - RTE
