@@ -119,7 +119,6 @@ Data Source Path: /sitecore/content/Sites/Commerce Bank/home/contact-us/770FFC01
 Data Source Template:	/sitecore/templates/User Defined/Commerce Bank/Features/Contact Module/Contact Module
 Fields: 
 Title - RTE
-Topic Tags - Multi Select
 Child Template: /sitecore/templates/User Defined/Commerce Bank/Features/Contact Module/Contact Item
 Fields:
 Title - RTE
