@@ -1,5 +1,7 @@
 Accordion/Leadership profile card component 
 Legacy Component Name: FAQs
+Page Path: /sitecore/content/Sites/Commerce Bank/home/personal/cards/credit-cards/special-connections
+Legacy Component Path: /sitecore/layout/Renderings/Commerce Bank/FAQs/FAQs
 Data Source Path: /sitecore/content/Sites/Commerce Bank/home/personal/cards/credit-cards/special-connections/1C664553EFDD418B914848DC05B10F95/7972613CDCA7490B99C466B5B98D7B67/FAQs 1
 FAQ Template : 	/sitecore/templates/User Defined/Commerce Bank/Features/FAQ/FAQ Question
 Fields: 
@@ -14,6 +16,8 @@ Answer Body - RTE
 
 Hero Image
 Legacy Component Name: Challenge Header
+Legacy Component Path:/sitecore/layout/Renderings/Commerce Bank/Challenge Header/Challenge Header
+Page Path: /sitecore/content/Sites/Commerce Bank/home/personal
 Data Source Path: /sitecore/content/Sites/Commerce Bank/8103012FCE5A419CB5501C83C3171652/2E6209C7565D44748B282EF45988940E/Challenge Header - New Personal
 Data Source Template: 	/sitecore/templates/User Defined/Commerce Bank/Features/Challenges/Challenges Header 
 Fields:
@@ -33,7 +37,9 @@ Background Color - Dropdown
 Enable Standard Width - Checkbox
 
 Resource Listing Component
+Page Path: /sitecore/content/Sites/Commerce Bank/home/about-us/media-center/media-assets
 Legacy Component Name: Basic Content Text
+Legacy Component Path : /sitecore/layout/Renderings/Commerce Bank/Basic Content Modules/Basic Content Text
 Data Source Path: /sitecore/content/Sites/Commerce Bank/home/about-us/media-center/media-assets/527FB2CF0C314119825CFB13ED5852CC/B5490FDBFC6E4D2EB391DF8553B1D0A2/Basic Content Text 6
 Data Source Template: 	
 Parent - 	/sitecore/templates/User Defined/Commerce Bank/Features/Basic Content Module/Basic Content 
@@ -53,6 +59,8 @@ Header - Checkbox
 
 Tiles component
 Legacy Component Name: MultiColumn Component
+Legacy Component Path: /sitecore/layout/Renderings/Commerce Bank/MultiColumn Component/MultiColumn Component
+Page Path: /sitecore/content/Sites/Commerce Bank/home/business/checking/order-checks
 Data Source Path: /sitecore/content/Sites/Commerce Bank/home/business/checking/order-checks/0350349EF99548AC8D45016E2A90C1ED/241BDC835F624D31831C18F825ADDF8A/MultiColumn Component 1
 Data Source Template: 	
 Parent - 	/sitecore/templates/User Defined/Commerce Bank/Features/MultiColumn Component/MultiColumn Component
