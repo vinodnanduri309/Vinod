@@ -1,1 +1,303 @@
+As a user,
+I want to enter my ZIP code to view applicable account rates,
+so that I can see accurate, location‑specific information before deciding to open an account.
 
+Details
+The Rates component displays:
+
+A section heading (e.g., “Checking Account Rates*”)
+
+A Lable above the input field 
+
+A ZIP code input field
+
+A primary action button (e.g., “View Rates”)
+
+The rates table is hidden by default
+
+Rates are displayed only after a ZIP code is entered and submitted
+
+Rates shown are location‑specific and may vary by ZIP code 
+
+The component supports:
+
+Client‑side validation of ZIP code
+
+Dynamic rendering of rates
+
+Each rate row may include:
+
+Account type
+
+APY
+
+Minimum to open
+
+CTA link (e.g., “Open an account”)
+
+Search for rates from Middleware (API integration) using zip code as input.
+
+Developer Note: All validations should be performed on both the client side and the server side. A possible validation for a ZIP code can use the following RegEx:
+zipCodeRegex = /^\d{5}(-\d{4})?$/;
+
+Desktop 
+
+ZIP code input and button appear inline near the section heading
+
+Rates display in a tabular layout after ZIP submission
+
+Table headers remain visible while scanning rows
+
+CTAs appear within the table rows
+
+Mobile 
+
+ZIP code input and button stack vertically
+
+Rates display in a stacked, card‑style layout (one account per block)
+
+Each account block includes:
+
+Account name
+
+APY
+
+Minimum to open
+
+CTA link
+
+ 
+
+API Details
+Below are the middleware api call urls received from the Commerce Team:
+
+QA: https://middleware-b.qa.testcbsh.com:9445/WebServices/Gateway/2006_11/getProductRates
+
+Prod: https://middleware.cbsh.com/WebServices/Gateway/2006_11/getProductRates
+
+Rates API
+
+GetProducts
+
+Fetches products related to rates
+
+GetRates
+
+Returns deposit and loan rates based on product ID
+
+ 
+
+The non-prod service endpoints have been set up and are ready for you to use. All AE and Vercel (non-prod) IPs have been whitelisted, 
+
+Below are the sample scripts (Tested using Postman)
+
+Non-prod endpoints:
+
+https://stig.kadamar.com/STIG/proxyService/sitecore/getOnlineProducts (first step call this service to get list of products) and then make secondary API call below
+
+https://stig.kadamar.com/STIG/proxyService/sitecore/getProductRates to get rates info by Productid, ServiceCategory (“DEPOSITS” or “LOANS”) and Zipcode entered by customer will be part the filter parameters.
+
+Pre-request Script (getOnlineProducts):
+
+
+
+var requestJson =
+ {
+    "ServiceName": "EnterpriseEventService",
+    "ServiceType": "Event.Query",
+    "ServiceMethod": "getOnlineProducts",
+    "MessageNumber": "123456789",
+    "Session": {
+        "SourceID": "CBC",
+        "UserID": "mgao00",
+        "TimeStamp": "2026-03-25T14:15:15.926"
+    },
+    "GetOnlineProductsRequestMessage": {},
+    "xmlns": "http://www.commercebank.com/2006_11/schema  ",
+    "async": "false",
+    "version": "2.0"
+};
+ 
+var request = JSON.stringify( requestJson );
+console.info("request " + request)
+// Encryption
+var vector="Please refer email from Mark " ;
+var passphrase=" Please refer email from Mark ";
+key = CryptoJS.enc.Latin1.parse(passphrase);
+iv = CryptoJS.enc.Latin1.parse(vector);
+var cipherData = CryptoJS.AES.encrypt(request, key, { iv: iv });
+var plainCipherData = cipherData.toString()
+console.info( "encryptedMakeCreditDebitRequest: " + plainCipherData )
+pm.variables.set("encryptedRequest1", plainCipherData);
+ 
+
+Post-response Script:
+
+
+
+var passphrase = "Please refer email from Mark";
+var vector = "Please refer email from Mark";
+var key = CryptoJS.enc.Latin1.parse(passphrase);
+var iv  = CryptoJS.enc.Latin1.parse(vector);
+var respBase64 = pm.response.text().trim();
+ console.log("Encrypted response:", respBase64);
+var decryptedWA = CryptoJS.AES.decrypt(
+  { ciphertext: CryptoJS.enc.Base64.parse(respBase64) },
+  key,
+  { iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 }
+);
+var plaintext = decryptedWA.toString(CryptoJS.enc.Utf8);
+console.log("Decrypted response plaintext:", plaintext);
+ 
+
+https://stig.kadamar.com/STIG/proxyService/sitecore/getProductRates
+
+Pre-request Script (getProductRates):
+
+
+
+var requestJson =
+{
+   "ServiceName":"com.cbi.core.Utility",
+   "ServiceType":"utility.inquiry",
+   "ServiceMethod":"getProductRates",
+   "Session":{
+      "SourceID":"CBC",
+      "UserID":"mgao00",
+      "TimeStamp":"2026-03-30T13:45:33.763"
+   },
+   "GetProductRatesRequestMessage":{
+      "ServiceCategory":"DEPOSITS",
+      "SearchZipCode":"64801",
+      "ApplId":"DDA", //Product
+      "TypeCode":"R"
+   },
+   "xmlns":"http://www.commercebank.com/2006_11/schema  ",
+   "async":"false",
+   "version":"2.0"
+};
+var request = JSON.stringify( requestJson );
+console.info("request " + request)
+// Encryption
+var vector="Please refer email from Mark" ;
+var passphrase="Please refer email from Mark";
+key = CryptoJS.enc.Latin1.parse(passphrase);
+iv = CryptoJS.enc.Latin1.parse(vector);
+var cipherData = CryptoJS.AES.encrypt(request, key, { iv: iv });
+var plainCipherData = cipherData.toString()
+console.info( "encryptedMakeCreditDebitRequest: " + plainCipherData )
+pm.variables.set("encryptedRequest1", plainCipherData);
+ 
+
+Post-response Script (same as getOnlineProducts above)
+
+
+Design Reference 
+Desktop Commerce Bank 
+
+image-20260312-173231.png
+Mobile Commerce Bank
+ 
+
+image-20260312-173419.png
+ 
+
+Acceptance Criteria
+Desktop
+
+Given the page is viewed on a desktop viewport
+When the Rates component is rendered
+Then the ZIP code input and “View Rates” button are displayed
+And the rates table is not displayed
+
+Given the ZIP code input is displayed
+When the user enters a 5‑digit ZIP code
+Then the ZIP code value is accepted
+
+Given the ZIP code input is displayed
+When the user enters an invalid ZIP code format and clicks “View Rates”
+Then the rates table is not displayed and an inline validation message is shown
+
+Given a valid ZIP code is entered
+When the user clicks the “View Rates” button
+Then the rates table is displayed below the input
+And the table shows account‑specific data for that ZIP code
+
+Given the rates table is displayed
+When account data is returned
+Then each row displays:
+
+Account type
+
+APY
+
+Minimum to open
+
+“Open an account” CTA
+
+Given an “Open an account” link is displayed in a table row
+When the user clicks the CTA
+Then the user is navigated to the corresponding account opening page
+
+Given rates are currently displayed
+When the user enters a different valid ZIP code
+And clicks “View Rates”
+Then the rates table updates to reflect the new ZIP code
+
+Mobile
+
+Given the page is viewed on a mobile device
+When the Rates component is rendered
+Then the ZIP code input and “View Rates” button are displayed
+And no rates are displayed initially
+
+Given a valid ZIP code is entered on mobile
+When the user taps the “View Rates” button
+Then the rates content is displayed below the input
+
+Given rates are displayed on mobile
+When the component renders
+Then each account is displayed as a stacked block
+And each block includes:
+
+Account name
+
+APY
+
+Minimum to open
+
+“Open an account” CTA
+
+Given an “Open an account” CTA is displayed
+When the user taps the CTA
+Then the user is navigated to the corresponding account opening page
+
+Given the user enters an invalid ZIP code
+When the user taps “View Rates”
+Then the rates are not displayed
+And an inline validation message is shown
+
+Accessibility
+
+Given a screen reader is enabled
+When the Rates (Dynamic) component is read
+Then the section heading is announced first
+And the ZIP code input is announced with its label
+And the “View Rates” button is announced as an actionable control
+
+Given the rates table is displayed on desktop
+When it is read by a screen reader
+Then column headers are announced as headers
+And row data is announced in the correct column context
+
+Given the user navigates using a keyboard
+When focus moves through the component
+Then the ZIP code input, “View Rates” button, and CTAs are all focusable
+
+Given any interactive element receives focus
+When focus is applied
+Then a visible focus indicator is displayed
+
+Given the Rates (Dynamic) component is displayed
+When viewed under accessibility contrast settings
+Then all text, inputs, buttons, and rate values remain readable
