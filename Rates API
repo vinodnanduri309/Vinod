@@ -301,3 +301,8 @@ Then a visible focus indicator is displayed
 Given the Rates (Dynamic) component is displayed
 When viewed under accessibility contrast settings
 Then all text, inputs, buttons, and rate values remain readable
+
+
+Vector = H2js0whzUYxWPsH8
+
+Passphrase = 6hf6kdTcW84kH65pYpTHLeE5j8Ek2vVv
