@@ -174,9 +174,39 @@ Fields:
 Logo -Image
 Text - RTE
 
+Site Banner:
+Legacy Componen Name: Alerts
+Legacy Component Location: /sitecore/layout/Renderings/Common/Alerts/Alerts
+Data Source Path: /sitecore/content/Sites/Commerce Bank/8103012FCE5A419CB5501C83C3171652/Site Alerts/Visit a location 
+Data Source Template:	/sitecore/templates/User Defined/Commerce Bank/Features/Alerts/CB Alert
+Fields: 
+Alert Pages -TreeListEx - datasource=/sitecore/content/sites/Commerce Bank/Home&includetemplatesforselection=Account Card Page,Insights Primary Section Page,Insights Article Page,Home Page,Primary Section Page,Section Page,Interior Page,Search Page,Account Page,Credit Card Page,Location Finder Page,404 Page,Business Trends And Insights Search Page,Right Panel Page
+Alert Style - DropLink - /sitecore/content/Global/Global Settings/Alerts/Alert Types
+Show Alert - Checkbox
+Alert Start Date - Datetime
+Alert End Date - Datetime
+Show Alert on Subpages - Checkbox
+Show Alert Dismiss Button - Checkbox
+Alert Message - Rich Text
 
+Forms Component
+Page PAth: /sitecore/content/Sites/Commerce Bank/home/personal/borrow/home-equity/home-equity-programs-contact
+Legacy Componen Name: Mvc Form
+Legacy Component Location: /sitecore/layout/Renderings/System/Forms/Mvc Form
+Data Source Path: /sitecore/Forms/home-equity-programs-contact
+Data Source Template:		/sitecore/templates/System/Forms/Form 
+Fields: 
+This is a Sitecore form, fields will be configured as needed, they will not be same always
 
-
+Modal Popup
+Page PAth: /sitecore/content/Sites/LJ Hart/Home/about-us
+Legacy Componen Name: Basic Page
+Legacy Component Location: /sitecore/layout/Renderings/LJ Hart/Containers/Pages/Basic Page
+Data Source Path: /sitecore/content/Sites/LJ Hart/Home/about-us
+Data Source Template:	/sitecore/templates/User Defined/LJ Hart/Pages/Content Page  
+Fields: 
+Title - single-Line Text
+Description - Rich Text
 
 
 
